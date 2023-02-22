@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/signup/" method="post">
+        <input type="text" name="user" placeholder="用户名"><br>
+        <input type="password" name="pwd" placeholder="密码"><br>
+        <input type="email" name="email" placeholder="邮箱"><br>
+{#        <input type="text" name="phone" placeholder="电话"><br>#}
+        <input type="submit" value="提交">
+        {{ errormsg }}
+    </form>
+</body>
+</html>

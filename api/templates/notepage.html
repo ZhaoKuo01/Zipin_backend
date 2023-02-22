@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.username }}的文章</title>
+</head>
+<body>
+    <h6>{{ note.tag }}</h6>
+    <h1>{{ note.title }}</h1>
+    <h3>{{ note.body }}</h3>
+    <h4>{{ note.like_num }}</h4>
+    <h5>{{ note.put_time }}</h5>
+
+{% for item in maincomn %}
+    <h6>{{ item.u_name }}</h6>
+    {{ item.content }}
+    <div class="subcomn">
+        {% for e in subcomn %}
+            {% if e.m_id == item.id %}
+                {{ e.content }}<br>
+            {% endif %}
+
+        {% endfor %}
+        <form action="/{{ item.id }}/subcommon/" method="post">
+            <input type="text" name="content" placeholder="评论">
+            <input type="submit" value="提交">
+        </form>
+    </div>
+{% endfor %}
+
+    <div class="maincomn">
+        <form action="/{{ note.id }}/maincommon/" method="post">
+            <input type="text" name="content" placeholder="发表评论">
+            <input type="submit" value="提交">
+        </form>
+    </div>
+<div class="common">
+
+
+</div>
+</body>
+</html>
